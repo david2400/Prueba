@@ -6,7 +6,7 @@ import { Button } from 'primereact/button';
 export interface ITableProps {
   data: Array<any>;
   columns: Array<any>;
-  Header?: (curElem: any) => JSX.Element;
+  header?: (curElem: any) => JSX.Element;
 }
 
 export const DataTables = (props: ITableProps) => {
@@ -27,6 +27,7 @@ export const DataTables = (props: ITableProps) => {
         paginatorLeft={paginatorLeft}
         paginatorRight={paginatorRight}
         tableStyle={{ minWidth: '50rem' }}
+        header={props.header}
       >
         {props.columns.map((col, i) => (
           <Column
@@ -34,6 +35,7 @@ export const DataTables = (props: ITableProps) => {
             field={col.field}
             sortable
             header={col.header}
+            body={col.body}
           />
         ))}
       </DataTable>

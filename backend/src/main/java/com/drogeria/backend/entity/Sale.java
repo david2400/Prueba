@@ -60,7 +60,4 @@ public class Sale implements Serializable {
         return getClass().hashCode();
     }
 
-     public Sale newSale() {
-        return Sale sale = new Sale();
-    }
 }

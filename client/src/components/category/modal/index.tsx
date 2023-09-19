@@ -12,7 +12,7 @@ export const updateFormSubcategory = atom(false);
 const Form = () => {
   const [update] = useAtom(updateFormSubcategory);
 
-  return update ? <FormCategoryAdd /> : <FormCategoryUpdate />;
+  return update ? <FormCategoryUpdate /> : <FormCategoryAdd />;
 };
 
 export const ModalsCategory = () => {

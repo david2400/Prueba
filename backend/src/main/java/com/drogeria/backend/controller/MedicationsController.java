@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
-@RequestMapping("api/category")
+@RequestMapping("api/medication")
 public class MedicationsController {
 
     @Autowired

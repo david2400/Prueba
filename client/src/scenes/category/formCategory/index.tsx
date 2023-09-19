@@ -9,18 +9,13 @@ export const FormCategory = (props: IFormProps) => {
     <Formik
       initialValues={props.initialValues}
       validationSchema={props.validationSchema}
-      onSubmit={async values => {
-        props.onSubmit;
+      onSubmit={async (values, { resetForm }) => {
+        console.log('hol');
+        props.onSubmit(values);
+        resetForm();
       }}
     >
-      {({
-        handleSubmit,
-        handleChange,
-        setFieldValue,
-        errors,
-        touched,
-        values,
-      }) => (
+      {({ handleSubmit, handleChange, errors, touched, values }) => (
         <form
           onSubmit={handleSubmit}
           className="w-full px-3 py-5"

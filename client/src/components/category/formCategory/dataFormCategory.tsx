@@ -2,6 +2,7 @@ import React from 'react';
 import { FormCategory } from '../../../scenes/category/formCategory';
 import { IFormProps } from '../../../interfaces/form';
 import { validationAdd } from '../../../validations/category';
+import { addCategory } from '../../../services/products';
 
 export const FormBase = (props: IFormProps) => {
   return (
@@ -15,12 +16,12 @@ export const FormBase = (props: IFormProps) => {
 
 export const DataAddCategory = () => {
   const initialValues = {
-    name: '',
-    description: '',
-    category: '',
-    slug: '',
+    name: 'hola',
   };
-  const onSubmit = async (values: any) => {
+
+  const onSubmit  = (values: any) => {
+    console.log(values);
+    addCategory(values);
     return null;
   };
 
@@ -35,7 +36,7 @@ export const DataAddCategory = () => {
 
 export const DataUpdateCategory = () => {
   const initialValues = {
-    name: '',
+    name: 'update',
     description: '',
     category: '',
     slug: '',

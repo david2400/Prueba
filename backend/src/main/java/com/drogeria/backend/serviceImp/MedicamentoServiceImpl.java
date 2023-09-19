@@ -31,7 +31,7 @@ public class MedicamentoServiceImpl implements MedicationService {
         if(Objects.isNull(medication)){
             throw  new GlobalDataRequiredException();
         }
-        Optional<Medications> medicamento =medicamentoRepository.findByNameAndLaboratory(medication.getName(),medication.getLaboratory());
+        Optional<Medications> medicamento = medicamentoRepository.findByNameAndLaboratory(medication.getName(),medication.getLaboratory());
         if(medicamento.isPresent()){
             throw  new MedicamentoRepeatException(medication.getName(),medication.getLaboratory());
         }
